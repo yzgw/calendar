@@ -1,0 +1,30 @@
+{
+  "name": "calendar",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "prepare-json": "npm run fetch-data; npm run ics2json; npm run trim-json",
+    "trim-json": "ts-node scripts/TrimHolidayJson.ts",
+    "fetch-data": "curl https://calendar.google.com/calendar/ical/ja.japanese%23holiday%40group.v.calendar.google.com/public/basic.ics -o src/assets/holiday.ics",
+    "ics2json": "ical2json src/assets/holiday.ics",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "@types/node": "^10.5.5",
+    "@types/request": "^2.47.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "ical2json": "^1.2.0",
+    "parcel-bundler": "^1.9.7",
+    "request": "^2.87.0",
+    "ts-node": "^7.0.0"
+  }
+}
