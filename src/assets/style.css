@@ -1,0 +1,215 @@
+
+body {
+    padding: 0 1rem 1rem 1rem;
+    color: #333;
+}
+
+header {
+    margin: 0 -1rem;
+    padding: 0.8rem;
+    text-align: center;
+    color: #00acc1;
+    font-weight: bold;
+    position: relative;
+}
+
+.opener {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.opener > svg > path {
+    fill: #00acc1;
+}
+
+h1 {
+    margin: 0 -1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    background-color: #00acc1;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #999;
+    margin-bottom: 1rem;
+}
+
+.checklist-item > input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.checklist-item > input[type="checkbox"] + span::before {
+    border-color: #00acc1;
+}
+
+.checklist-item > input[type="checkbox"]:checked + span::before {
+    background-color: #00acc1;
+}
+
+.checklist-item > span {
+    flex: 1;
+}
+
+.checklist-item > input[type="checkbox"] + span::before,
+.checklist-item > input[type="checkbox"] + span::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    content: '';
+    box-sizing: border-box;
+}
+
+.checklist-item > input[type="checkbox"] + span::before {
+    z-index: 0;
+    background-color: transparent;
+    width: 22px;
+    height: 22px;
+    border: 2px #616161 solid;
+    border-radius: 5px;
+}
+
+.checklist-item > input[type="checkbox"] + span::after {
+    z-index: 1;
+    margin: 5px 8px;
+    width: 6px;
+    height: 9px;
+}
+
+.checklist-item > input[type="checkbox"]:checked + span::before {
+    background-color: #616161;
+}
+
+.checklist-item > input[type="checkbox"]:checked + span::after {
+    border: 2px solid #fff;
+    border-width: 0 2px 2px 0;
+    -webkit-transdiv: rotate(45deg);
+    -ms-transdiv: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+amp-ad{
+    direction: initial;
+}
+
+amp-sidebar {
+    width: 60vw ;
+}
+
+.global-menu {
+    margin:  1rem;
+    padding: 0;
+}
+
+.global-menu-item {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+
+.global-menu-item > a {
+    color: #00acc1;
+    text-decoration: none;
+}
+
+.ui-year {
+    width: 930px;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ui-month {
+    width: 25%;
+    float: left;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.ui-month-title {
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    border-bottom: 3px double #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.ui-day {
+    float: left;
+    font-size: 0.8rem;
+    width: calc(100% / 7);
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.ui-day[data-is-header="true"] {
+    border-bottom: 1px solid #999;
+    font-weight: bold;
+}
+
+.ui-day[data-is-saturday="true"] {
+    background-color: #eaf8ff;
+}
+
+.ui-day[data-is-sunday="true"], .ui-day[data-is-holiday="true"] {
+    background-color: #ffe2dd;
+}
+
+.ui-day[data-is-rest="true"] {
+    opacity: 0.4;
+}
+
+.ui-day[data-is-header="true"][data-is-saturday="true"] {
+    color: #2b54ff;
+}
+
+.ui-day[data-is-header="true"][data-is-sunday="true"] {
+    color: #ff3f21;
+}
+
+@media (max-width: 575.98px) {
+    .ui-year {
+        width: 100%;
+    }
+
+    .ui-month {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .ui-year {
+        width: calc(576px - 2rem);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 949.98px) {
+    .ui-year {
+        width: calc(768px - 2rem);
+    }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <title>国内旅行チェックリスト</title>
+    <link rel="canonical" href="checklist.html">
+    <%- include('./parts/head.ejs') %>
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+</head>
+<body>
+
+<%- include('./parts/header.ejs') %>
+
+<h1>
+    カレンダー
+</h1>
+
+<div class="ui-year">
+    <% data.map((month) => { %>
+    <div class="ui-month">
+        <div class="ui-month-title"><%= month.month %> 月</div>
+
+        <span class="ui-day" data-is-header="true" data-is-sunday="true">日</span>
+        <span class="ui-day" data-is-header="true">月</span>
+        <span class="ui-day" data-is-header="true">火</span>
+        <span class="ui-day" data-is-header="true">水</span>
+        <span class="ui-day" data-is-header="true">木</span>
+        <span class="ui-day" data-is-header="true">金</span>
+        <span class="ui-day" data-is-header="true" data-is-saturday="true">土</span>
+
+        <% month.days.map((day) => { %>
+        <time
+                class="ui-day"
+                datetime="<%= day.ISO %>"
+                data-is-rest="<%= day.isRest %>"
+                data-is-saturday="<%= day.isSaturday() %>"
+                data-is-sunday="<%= day.isSunday() %>"
+                data-is-holiday="<%= day.isHoliday() %>"
+        ><%= day.day %></time>
+        <% }); %>
+    </div>
+
+    <% }); %>
+</div>
+
+</body>
+</html>
